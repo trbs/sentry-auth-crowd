@@ -7,7 +7,8 @@ A Crowd authentication backend for Sentry.
 Install
 -------
 
-::
+.. code-block:: console
+
     $ pip install sentry-auth-crowd
 
 
