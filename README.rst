@@ -38,7 +38,15 @@ The following settings should be set in ``sentry.conf.py``:
         'sentry_auth_crowd.backend.SentryCrowdBackend',
     )
     
-If you are using `getsentry/onpremise`_ to install sentry, after done above, remember to rerun *docker-compose build* then *docker-compose up -d*, now enjoy it!
+If you are using `getsentry/onpremise`_ to install sentry, after done above, remember to rerun 
+
+*docker-compose build* 
+
+then 
+
+*docker-compose up -d*
+
+now enjoy it!
 
 .. _getsentry/onpremise: https://github.com/getsentry/onpremise 
 
