@@ -11,6 +11,7 @@ Install
 
     $ pip install sentry-auth-crowd
 
+If you are using `getsentry/onpremise`_ to install sentry, just add `sentry-auth-crowd` in getsentry/onpremise/requirements.txt .
 
 Setup
 -----
@@ -32,7 +33,22 @@ The following settings should be set in ``sentry.conf.py``:
     CROWD_APP_PASSWORD = ""
     # The team slugs a new user should automatically be member of.
     CROWD_DEFAULT_TEAM_SLUGS = []
+    # Put this after AUTHENTICATION_BACKENDS declaration, if it not exists, just set
+    AUTHENTICATION_BACKENDS = AUTHENTICATION_BACKENDS + (
+        'sentry_auth_crowd.backend.SentryCrowdBackend',
+    )
+    
+If you are using `getsentry/onpremise`_ to install sentry, after done above, remember to rerun 
 
+*docker-compose build* 
+
+then 
+
+*docker-compose up -d*
+
+now enjoy it!
+
+.. _getsentry/onpremise: https://github.com/getsentry/onpremise 
 
 SSO Support
 -----------
